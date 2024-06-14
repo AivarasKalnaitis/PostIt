@@ -34,11 +34,13 @@ To get the DB script run "dotnet ef migrations script" --output <output-file.sql
            "PostitApiKey": "your_api_key_here"
        }
    }
+   ````
 
-**LocalSql**: Ensure to add connection string for local db:
-```json
-{
-    "ConnectionStrings": {
-        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=PostIt;Trusted_Connection=True;MultipleActiveResultSets=true"
-    }
-}
+ **LocalSql**: Ensure to add connection string for local db:
+	```json
+	{
+		"ConnectionStrings": {
+			"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=PostIt;Trusted_Connection=True;MultipleActiveResultSets=true"
+		}
+	}
+	````
