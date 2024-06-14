@@ -13,17 +13,17 @@ namespace PostIt.Data.Repositories
             _context = context;
         }
 
-        public async Task<Client> GetClientByNameAndAddress(string name, string address)
+        public async Task<Client> GetClientByNameAndAddressAsync(string name, string address)
         {
             return await _context.Clients.FirstOrDefaultAsync(c => c.Name == name && c.Address == address);
         }
 
-        public async Task<IEnumerable<Client>> GetClients()
+        public async Task<IEnumerable<Client>> GetClientsAsync()
         {
             return await _context.Clients.ToListAsync();
         }
 
-        public async Task AddClient(Client client)
+        public async Task AddClientAsync(Client client)
         {
             await _context.Clients.AddAsync(client);
             await _context.SaveChangesAsync();

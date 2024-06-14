@@ -23,6 +23,3 @@ packages/
 # Miscellaneous
 Thumbs.db
 .DS_Store
-
-# Ignore all JSON files
-*.json

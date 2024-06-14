@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PostIt.Data;
 
@@ -11,9 +12,11 @@ using PostIt.Data;
 namespace PostIt.API.Migrations
 {
     [DbContext(typeof(PostItContext))]
-    partial class PostItContextModelSnapshot : ModelSnapshot
+    [Migration("20240614150703_Logs with exception")]
+    partial class Logswithexception
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,6 +69,7 @@ namespace PostIt.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Exception")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Timestamp")

@@ -14,14 +14,16 @@ The PostIt project is a C# application designed to update client post codes by f
 
 The application includes Swagger UI for easy API exploration and testing. After running the application, navigate to https://localhost:<port>/swagger in your browser to access the Swagger UI
 
-First run command "update-database" to add migrations with EF ORM
+First replace "klientai.json" file in "PostIt\PostIt.Data\Resources" or use the development one already existing in that directory
+
+Then run command "update-database" to add migrations with EF ORM
 
 To get the DB script run "dotnet ef migrations script" --output <output-file.sql>
 
 ### Prerequisites
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- A valid API key for the Postit API.
+- A valid API key for the Postit API
 
 ### Configuration
 
@@ -32,3 +34,11 @@ To get the DB script run "dotnet ef migrations script" --output <output-file.sql
            "PostitApiKey": "your_api_key_here"
        }
    }
+
+**LocalSql**: Ensure to add connection string for local db:
+```json
+{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=PostIt;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+}
