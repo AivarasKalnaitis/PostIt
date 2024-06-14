@@ -36,11 +36,4 @@ To get the DB script run "dotnet ef migrations script" --output <output-file.sql
    }
    ````
 
- **LocalSql**: Ensure to add connection string for local db:
-	```json
-	{
-		"ConnectionStrings": {
-			"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=PostIt;Trusted_Connection=True;MultipleActiveResultSets=true"
-		}
-	}
-	````
+ **LocalSql**: Also ensure to add correct connection string for local db in `appsettings.json`
